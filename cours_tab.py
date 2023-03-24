@@ -25,7 +25,9 @@ def show():
             with ui.expansion(f"{i + 1}. {expansion_contents[i][0]}", icon="book").classes("w-full h-full").style(
                     "font-size:20px; height:100%; padding:5px;"
             ):
-                ui.tree(trees[0], label_key="id", on_select=lambda: ui.open("/Introduction")).props("no-transition accordion")
+                ui.tree(trees[0],
+                label_key="id",
+                on_select=lambda e: ui.open("/Introduction#" + e.value)).props("no-transition accordion")
 
 
 def expansion_trees():
@@ -34,8 +36,8 @@ def expansion_trees():
         "id": "L'algorithme",
         "children": 
             [
-                {"id": "La Forme Générale 'un Algorithme"},
-                {"id": "Les Syntaxes et Structures Slgorithmiques."}
+                {"id": "La Forme Générale d'un Algorithme"},
+                {"id": "Les Syntaxes et Structures Algorithmiques"}
             ]
         }
     ]
